@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   
   def show # 追加
     @user= User.find(params[:id])
+    @microposts = @user.microposts
   end
   
   def new
@@ -18,9 +19,18 @@ class UsersController < ApplicationController
     end
   end
   
-  def show
-    @user = User.find(params[:id])
-    @microposts = @user.microposts
+  def edit
+    @user= User.find(params[:id])
+  end
+  
+  def update
+    @user= User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = "Profile updated"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
   
   private
@@ -29,3 +39,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
+
