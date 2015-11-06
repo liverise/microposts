@@ -4,6 +4,8 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <div><%= link_to "Followings", followings_user_path(@user) %></div>
+        <div><%= link_to "Followers", followers_user_path(@user) %></div>
       </h1>
     </section>
   </aside>
@@ -15,5 +17,7 @@
         <%= render @microposts %>
       </ol>
     <% end %>
+    
+  
   </div>
 </div>
