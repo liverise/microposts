@@ -7,16 +7,13 @@
       </h1>
     </section>
   </aside>
-</div>
-
-<div class="row">
-  <aside class="col-md-4">  
-    <ul>
-      <% @followings.each do |u| %>
-      <%= gravatar_for @user %>
-      <%= u.name %>
-      <%= f.submit "Unfollow", class: "btn" %>
-      <% end %>
-    </ul>
-  </aside>
+  <div class="col-md-8">
+    <h3>Followers (<%= @followings.count %>)</h3>
+          <ul>
+            <% @followings.each do |u| %>
+            <%= gravatar_for @user, size: 50 %>
+            <%= u.name %>
+            <% end %>
+          </ul>
+  </div>
 </div>
