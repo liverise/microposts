@@ -8,14 +8,14 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <h3>Followers (<%= @followers.count %>)</h3>
-        <ol class="follower_users">
-          <ul>
-            <% @followers.each do |u| %>
-            <%= gravatar_for @user, size: 50 %>
-            <%= u.name %>
-            <% end %>
-          </ul>
-        </ol>
+    <h3>フォロワー一覧 (<%= @followers.count %>)</h3>
+      <ul class="users">
+        <% @followers.each do |u| %>
+          <li>
+            <%= gravatar_for u, size: 50 %>
+            <%= link_to u.name, u %>
+          </li>
+        <% end %>
+      </ul>
   </div>
 </div>
