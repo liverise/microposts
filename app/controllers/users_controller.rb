@@ -37,10 +37,20 @@ class UsersController < ApplicationController
     end
   end
   
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.following_users
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.follower_users
+  end
+  
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :location, :profile, :password, :password_confirmation)
   end
 end
 
