@@ -50,6 +50,11 @@ p {
   line-height: 1.7em;
 }
 
+h4 {
+  font-size:14px;
+  color: gray;
+}
+
 /* header */
 
 #logo {
@@ -203,4 +208,24 @@ span.picture {
       border-bottom: 1px solid $gray-lighter;
     }
   }
+}
+
+.btn1 {
+	background-color:white;
+  text-indent:0;
+	border:1px solid gray;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:14px;
+	font-weight:normal;
+	font-style:normal;
+  height:26px;
+	line-height:26px;
+  width:80px;
+	text-decoration:none;
+	text-align:center;
+}.btn1:active {
+	position:relative;
+	top:1px;
 }
